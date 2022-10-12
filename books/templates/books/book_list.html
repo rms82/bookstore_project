@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Book List
@@ -21,8 +22,8 @@
                         <div class="col-md-8 h-100">
                             <div class="d-flex flex-column justify-content-between h-100">
                                 <div class="card-body">
-                                    <h3 class="card-title"><strong>{{ book.title }}</strong></h3>
-                                    <p class="card-text pt-3">{{ book.text }}</p>
+                                    <a href="{{ book.get_absolute_url }}"><h3 class="card-title"><strong>{{ book.title }}</strong></h3></a>
+                                    <p class="card-text pt-3">{{ book.text|truncatewords:30 }}</p>
                                     <p class="text-muted">نویسنده: {{ book.author }}</p>
                                 </div>
                             </div>
