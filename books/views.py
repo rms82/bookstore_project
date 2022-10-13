@@ -4,6 +4,7 @@ from django.views import generic
 from .models import Book
 from .forms import BookForm
 
+
 # Create your views here.
 class BookListView(generic.ListView):
     template_name = 'books/book_list.html'
@@ -19,3 +20,9 @@ class BookDetailView(generic.DetailView):
 class BookCreateView(generic.CreateView):
     form_class = BookForm
     template_name = 'books/book_new.html'
+
+
+class BookUpdate(generic.UpdateView):
+    form_class = BookForm
+    model = Book
+    template_name = 'books/book_update.html'

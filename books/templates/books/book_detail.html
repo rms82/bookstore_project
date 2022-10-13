@@ -13,8 +13,10 @@
                     <div class="row w-sm-75 w-100">
                         <div class="col-xs-12 col-md-3 d-flex justify-content-center">
                             <div>
-                                <img src="https://newcdn.fidibo.com/images/books/65579_50411_normal.jpg"
-                                     class="img-fluid rounded-start" alt="...">
+                                {% if book.cover %}
+                                    <img src="{{ book.cover.url }}"
+                                         class="img-fluid rounded-start" alt="...">
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6 text-center text-md-end mt-md-1 mt-4">
@@ -25,7 +27,7 @@
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-muted align-self-md-end">
-                                {{book.price }} دلار
+                                {{ book.price }} دلار
                             </h3>
                         </div>
                     </div>
@@ -33,7 +35,7 @@
 
                 <div class="d-flex justify-content-center">
                     <div class="my-3 p-5 w-sm-75 w-100">
-                        {{ book.text  }}
+                        {{ book.text }}
                     </div>
                 </div>
 
