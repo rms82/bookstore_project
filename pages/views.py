@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 
 
 # Create your views here.
 def home_page(request):
-    return render(request, 'home.html')
+    return redirect('book_list')
 

@@ -28,6 +28,7 @@
                                             class="card-title"><strong>{{ book.title }}</strong></h3></a>
                                     <p class="card-text pt-3">{{ book.text|truncatewords:30 }}</p>
                                     <p class="text-muted">نویسنده: {{ book.author }}</p>
+                                    <p class="text-muted">ایجاد شده توسط {{ book.created_by.username }}</p>
                                 </div>
                             </div>
                         </div>
